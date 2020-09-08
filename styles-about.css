@@ -3,20 +3,6 @@
     padding: 0px;
 }
 
-/* Animations */
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: none;
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-}
-
 /* For formatting the top headings bar of the webpage, and all its constituents */
 
 .headerbar {
@@ -98,7 +84,6 @@
     height: 800px;
     width: 100%;
     overflow: hidden;
-    justify-content: center;
     align-items: center;
 }
 
@@ -108,50 +93,38 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.frame:hover .frame-background {
-    filter: brightness(40%);
+    filter: brightness(160%);
 }
 
 .frame-text {
     display: block;
     position: absolute;
-    width: 50%;
+    left: 90px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 30%;
+    max-height: 90%;
+    overflow-y: auto;
+    border-radius: 10%;
     word-wrap: normal;
-    z-index: 1;
+    background: white;
 }
 
 .title {
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
     text-transform: uppercase;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    color: white;
-    text-shadow: black 1px 1px 10px;
+    color: salmon;
 }
 
 .description {
-    margin-top: 10px;
-    font-size: 20px;
-    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+    text-align: left;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-shadow: black 5px 5px 10px;
-}
-
-.project-link {
-    text-decoration: none;
-    color: white;
-}
-
-.project-link:hover {
-    font-size: 21px;
-    border-bottom: solid white 1px;
-    font-weight: bolder;
-}
-
-.frame--fadeOut {
-    animation-duration: 0.25s;
+    line-height: 22px;
+    color: gray;
 }
