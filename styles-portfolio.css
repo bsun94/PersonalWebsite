@@ -96,6 +96,11 @@
     margin-bottom: 20px;
 }
 
+.frame-anchor a {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
 .frame-exhibit {
     display: flex;
     position: relative;
@@ -112,6 +117,7 @@
     border-radius: 7%;
     overflow: hidden;
     justify-content: center;
+    cursor: pointer;
 }
 
 .image:hover {
