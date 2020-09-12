@@ -109,20 +109,19 @@
     margin-bottom: 15px;
     margin-left: 20px;
     margin-right: 20px;
+    overflow: hidden;
 }
 
 .image {
     display: flex;
     position: relative;
-    border-radius: 7%;
+    border-radius: 5%;
     overflow: hidden;
     justify-content: center;
     cursor: pointer;
-}
-
-.image:hover {
-    opacity: 0.8;
-    transition: 0.25s;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in;
 }
 
 .image-rousseau{
@@ -137,6 +136,46 @@
 .image-twitter{
     margin-right: 10px;
 }
+
+/* image interactions and animations */
+.image.appear {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.image:hover {
+    opacity: 0.8;
+    transition: 0.25s;
+}
+
+/* image lightboxes */
+
+#lightbox {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+#lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: display 0.5s;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    padding: 4px;
+    background-color: black;
+    border: 2px solid white;
+}
+
+/* text formatting */
 
 .text {
     font-size: 15px;
@@ -163,3 +202,4 @@
     color: black;
     border-bottom: solid black 1px;
 }
+
