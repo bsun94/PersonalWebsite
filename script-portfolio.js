@@ -1,7 +1,7 @@
 const images = document.querySelectorAll('.image');
 
 const imagesOptions = {
-    threshold: 0.8
+    rootMargin: '0% 0% -35% 0%'
 };
 
 const imagesObserver = new IntersectionObserver (function(
