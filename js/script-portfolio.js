@@ -28,8 +28,7 @@ images.forEach(image => {
     image.addEventListener('click', e => {
         lightbox.classList.add('active');  //check eventlisteners
         const img = document.createElement('img');
-        console.log(image.firstChild)
-        img.src = image.firstChild.nextElementSibling.src;  //check eventlisteners
+        img.src = image.src;  //check eventlisteners
         while (lightbox.firstChild) {
             lightbox.removeChild(lightbox.firstChild);
         }

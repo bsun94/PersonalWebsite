@@ -2,8 +2,9 @@ const frames = document.querySelectorAll('.frame');
 
 function frameOpacity (frame) {
     let bounds = frame.getBoundingClientRect();
+    frame.style.opacity = Math.min(1, Math.max(bounds.bottom / bounds.height, 0));
+
     if (bounds.y <= -5 && bounds.bottom >= 0) {
-        frame.style.opacity = Math.min(1, Math.max(bounds.bottom / bounds.height, 0));
         frame.nextElementSibling.style.zIndex = frame.style.zIndex - 1;
         frame.nextElementSibling.style.bottom = bounds.height + bounds.y - 2 + 'px';
     } else if (frame.previousElementSibling.style.opacity <= 0.1) {
@@ -13,6 +14,12 @@ function frameOpacity (frame) {
 };
 
 window.addEventListener('scroll', e => {
+    frames.forEach(frame => {
+        frameOpacity(frame);
+    });
+});
+
+window.addEventListener('resize', e => {
     frames.forEach(frame => {
         frameOpacity(frame);
     });

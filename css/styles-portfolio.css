@@ -106,6 +106,7 @@
     position: relative;
     justify-content: space-between;
     justify-items: center;
+    max-width: 100%;
     margin-bottom: 15px;
     margin-left: 20px;
     margin-right: 20px;
@@ -113,12 +114,10 @@
 }
 
 .image {
-    display: flex;
     position: relative;
     border-radius: 5%;
-    overflow: hidden;
-    justify-content: center;
     cursor: pointer;
+    object-fit: cover;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.5s ease-in;
@@ -130,10 +129,12 @@
 }
 
 .image-covid{
+    max-width: 50%;
     margin-right: 10px;
 }
 
 .image-twitter{
+    max-width: 33%;
     margin-right: 10px;
 }
 
