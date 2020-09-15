@@ -19,16 +19,16 @@ const imagesObserver = new IntersectionObserver (function(
     }, 
     imagesOptions);
 
-const lightbox = document.createElement('div');  //check createElement
+const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 document.body.appendChild(lightbox);
 
 images.forEach(image => {
     imagesObserver.observe(image);
     image.addEventListener('click', e => {
-        lightbox.classList.add('active');  //check eventlisteners
+        lightbox.classList.add('active');
         const img = document.createElement('img');
-        img.src = image.src;  //check eventlisteners
+        img.src = image.src;
         while (lightbox.firstChild) {
             lightbox.removeChild(lightbox.firstChild);
         }
