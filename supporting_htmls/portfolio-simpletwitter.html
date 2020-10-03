@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Brian Sun's Webspace</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='../css/styles-portfolio.css'>
+    <script defer type="text/javascript" src='../js/script-portfolio.js'></script>
+</head>
+<body>
+    <div class="headerbar">
+
+        <div class="navigation">
+            <div class="navigation-home">
+                <a href="../index.html">Main</a>
+            </div>
+
+            <div class="navigation-about">
+                <a href="../about.html">About</a>
+            </div>
+        </div>
+
+        <div class="profiles">
+            <div class="header-photos">
+                <a href="https://github.com/bsun94" target="github">
+                    <img class="github" src="../images/index-header-github.jpg">
+                </a>
+            </div>
+
+            <div class="header-photos">
+                <a href="https://www.linkedin.com/in/bsun-to/" target="linkedin">
+                    <img class="linkedin" src="../images/index-header-linkedin.jpg">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="frame" >
+        <div class="frame-anchor">
+            <a id="simple-twitter">twitter in two weeks!</a>
+        </div>
+
+        <div class="frame-exhibit">
+                <img class="image image-twitter" src="../images/portfolio-simpletwitter-login.JPG">
+
+                <img class="image image-twitter" src="../images/portfolio-simpletwitter-main.JPG">
+
+                <img class="image image-twitter" src="../images/portfolio-simpletwitter-replies.JPG">
+        </div>
+
+        <div class="frame-exhibit">
+            <div class="text text-twitter">
+                I'd always wanted to build a rudimentary version of a social media platform - just as a proof-of-concept for myself to see how it could all work. Aware that I do not have the same kind of budget that Facebook and Twitter have, and that I'll be programming this in my spare time outside of a full-time job, I decided to take a tongue-in-cheek approach to this project - calling it a "Low-Budget" Twitter.
+                <br><br>
+                The application is capable of handling user logins (checking if a username already exists before registration; validating username and password inputs - the login screen is shown in the left image), the inputting and display of tweets on a main feed (middle image) and building conversation threads for each main/original tweet and its replies (and subsequently displaying individual conversation threads in the window - example shown in the image to the right). The logo drawn for the application, as can be seen on the login window, is meant to reflect the tongue-in-cheek side of this project (and to avoid copyright). :)
+                <br><br>
+                I used the tkinter module in Python to build out the UI for this application. I'd learnt about tkinter when I first learnt Python, and was always keen on using it to build something. Admittedly, tkinter doesn't necessarily facilitate the most flashy modern-day visual designs - I was more so curious and keen to get deeper into the module.
+                <br><br>
+                As for the database side of things, I set up a free account with IBM to use their Lite database plan. The script makes a connection to the IBM database when storing tweets/replies that users post, as well as user login information. For security purposes, user passwords are hashed prior to database storage. The overall structure of the code is based on the MVC design pattern.
+                <br><br>
+                <a href="https://github.com/bsun94/simpletwitter" target="_twitter">Click here to see all my code and content files for this project on Github.</a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

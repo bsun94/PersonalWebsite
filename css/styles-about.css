@@ -133,6 +133,17 @@
     color: gray;
 }
 
+.description a {
+    text-decoration: none;
+    border-bottom: none;
+    color: gray;
+    font-style: italic;
+}
+
+.description a:hover {
+    font-weight: bold;
+}
+
 @-webkit-keyframes fadeIn {
     from {opacity: 0;
         transform: translateY(20px);}

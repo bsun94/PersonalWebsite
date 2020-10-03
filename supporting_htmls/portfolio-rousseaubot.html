@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Brian Sun's Webspace</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='../css/styles-portfolio.css'>
+    <script defer type="text/javascript" src='../js/script-portfolio.js'></script>
+</head>
+<body>
+    <div class="headerbar">
+
+        <div class="navigation">
+            <div class="navigation-home">
+                <a href="../index.html">Main</a>
+            </div>
+
+            <div class="navigation-about">
+                <a href="../about.html">About</a>
+            </div>
+        </div>
+
+        <div class="profiles">
+            <div class="header-photos">
+                <a href="https://github.com/bsun94" target="github">
+                    <img class="github" src="../images/index-header-github.jpg">
+                </a>
+            </div>
+
+            <div class="header-photos">
+                <a href="https://www.linkedin.com/in/bsun-to/" target="linkedin">
+                    <img class="linkedin" src="../images/index-header-linkedin.jpg">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="frame" >
+        <div class="frame-anchor">
+            <a id="rousseau-bot">RousseauBot on Twitter</a>
+        </div>
+
+        <div class="frame-exhibit">
+            <div class="text text-rousseau">
+                Curious about how Twitter bots worked, I set out to create one myself - I use to see them running amuck tweeting to famous people like Elon Musk. After some research, I found that the first step is to set up an account for your bot and then apply for <a href="https://developer.twitter.com" target="_twitterdev">Twitter Developers</a> access to that account's back-end. This process is fairly straightforward and quick within the Twitter Developers portal - just remember to note down all your API/client tokens and keys!
+                <br><br>
+                Of course, I didn't want to create anything as aggressive as those bots that harass everyone's tweet feeds; I aimed to make a bot paying hommage to one of my favourite authors. I first needed to grab some Rousseau source material. I found a page on the <a href="https://oll.libertyfund.org/titles/rousseau-the-social-contract-and-discourses" target="_libertylib">Online Library of Liberty</a> website containing a piece by Rousseau that I liked, <i>On the Social Contract</i>. Using BeautifulSoup and the requests Python libraries, I scraped the webpage for text (using regex to split paragraphs into sentences and to filter for "good" sentences to use e.g. ignore "sentences" that are really just chapter titles). This is all then stored in a txt file for a separate script to read.
+                <br><br>
+                I wrote another program that read a randomly-selected quote from the txt file above and posted it to RousseauBot's account on Twitter (as shown on the right - <a href="https://twitter.com/RousseauSays" target="_rousseautwitter">go follow!</a>), keeping track of the quotes tweeted over the past 10 days to avoid short-term repetition in a deterministic manner.
+                <br><br>
+                <a href="https://github.com/bsun94/RousseauBot" target="_rousseaubot">Click here to see all my code and content files for this project on Github.</a>
+            </div>
+
+            <img class="image image-rousseau" src="../images/portfolio-rousseaubot-twitter.JPG">
+        </div>
+    </div>
+
+</body>
+</html>
