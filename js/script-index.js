@@ -5,10 +5,13 @@ function frameOpacity (frame) {
     frame.style.opacity = Math.min(1, Math.max(bounds.bottom / bounds.height, 0));
 
     if (bounds.y <= -5 && bounds.bottom >= 0) {
-        frame.nextElementSibling.style.zIndex = frame.style.zIndex - 1;
-        frame.nextElementSibling.style.bottom = bounds.height + bounds.y - 2 + 'px';
-    } else if (frame.previousElementSibling.style.opacity <= 0.1) {
         frame.style.zIndex = 1;
+        frame.nextElementSibling.style.zIndex = 0;
+        frame.nextElementSibling.style.bottom = bounds.height + bounds.y - 2 + 'px';
+    } else if (bounds.bottom <= 5) {
+        frame.style.zIndex = 0;
+        frame.nextElementSibling.style.zIndex = 1;
+    } else if (bounds.y >= -5) {
         frame.nextElementSibling.style.bottom = '0px'
     };
 };
