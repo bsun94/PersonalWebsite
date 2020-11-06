@@ -18,6 +18,7 @@ body {
     background: white;
     position: sticky;
     top: 0px;
+    box-shadow: 0px 1px 10px 1px black;
 }
 
 .navigation {
@@ -80,13 +81,9 @@ body {
 /* For formatting the descriptive contents of the main page */
 
 .frame {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    width: 100%;
+    height: calc(100vh - 80px);
+    width: 100vw;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
 }
 
 .frame-background {
@@ -95,11 +92,13 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    filter: brightness(90%);
 }
 
 .frame-text {
-    position: absolute;
-    width: 50%;
+    top: 50%;
+    transform: translateY(-30%);
+    bottom: initial;
     word-wrap: normal;
     z-index: 1;
 }
@@ -120,12 +119,12 @@ body {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    text-shadow: black 5px 5px 10px;
+    text-shadow: black 2px 2px 4px;
 }
 
 .project-link {
     text-decoration: none;
-    color: white;
+    color: white !important;
 }
 
 .project-link:hover {
