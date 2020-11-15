@@ -149,6 +149,7 @@ body {
 .iframe {
     width: 100%;
     height: 75vh;
+    background: url(../images/portfolio-iframe-loading.gif) center center no-repeat;
 }
 
 /* image interactions and animations */
@@ -216,4 +217,3 @@ body {
     color: black;
     border-bottom: solid black 1px;
 }
-
