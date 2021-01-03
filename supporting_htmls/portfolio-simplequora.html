@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Brian Sun's Webspace</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='../css/styles-portfolio-projects.css'>
+    <script defer type="text/javascript" src='../js/script-portfolio.js'></script>
+</head>
+<body>
+    <div class="headerbar">
+
+        <div class="navigation">
+            <div class="navigation-home">
+                <a href="../index.html">Main</a>
+            </div>
+
+            <div class="navigation-portfolio">
+                <a href="../portfolio.html">Portfolio</a>
+            </div>
+
+            <div class="navigation-about">
+                <a href="../about.html">About</a>
+            </div>
+        </div>
+
+        <div class="profiles">
+            <div class="header-photos">
+                <a href="https://github.com/bsun94" target="github">
+                    <img class="github" src="../images/header-github.jpg">
+                </a>
+            </div>
+
+            <div class="header-photos">
+                <a href="https://www.linkedin.com/in/bsun-to/" target="linkedin">
+                    <img class="linkedin" src="../images/header-linkedin.jpg">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="frame" >
+        <div class="frame-anchor">
+            <a id="simple-twitter">The Unexpected Child of Quora and Reddit</a>
+        </div>
+
+        <div class="frame-exhibit">
+            <iframe style="width: 100%; height: 75vh;" src="https://master.d33rttb7m15his.amplifyapp.com/"></iframe>
+        </div>
+
+        <div class="frame-exhibit">
+            <div class="text">
+                <i>** You can log into the above using the credentials: username = test_user; password = test_user **</i>
+                <br><br>
+                Having successfully built my Chinese dictionary web app, I had started to think about my next full-stack project idea. Admittedly, project ideas weren't coming to me now as quickly as they did back in September/October. It took me a while to think of a new one - building my own version of Quora.
+                <br><br>
+                For the front-end, I again used React.js. This build being of a bigger scale than the previous, I was mindful to stay organized with my modules from the very get-go; everything was, as best as I can, segregated into separate Model, View and Controller folders. I built up 3 main displays: a <b>questions</b> page, where the user could see all the questions asked to the website; an <b>answers</b> page, where users could see all the answers relevant to a particular question; and a <b>comments</b> display, where users can see all comments relevant to an answer given. Comments were designed to be "recursive" - one comment could be a reply to another, and this response relationship is explicitly displayed - so there wouldn't be any further levels down of conversation; from a product design perspective, I also hoped to use the comments as an isolated environment where people can verbally food-fight. This response feature was allowed for with self joins on the database side. Each of the questions, answers and comments had their own URL address based on their IDs and corresponding data tables in the database built in using <a href="https://reactrouter.com/" target="_reactRoute">React Router.</a>
+                <br><br>
+                A layer I built on top of all this was a login screen, able to handle user registrations and authentications. Any passwords provided were hashed within my React.js app before any of it was sent over the internet to my server/database. Once logged in, the user's username and user ID were stored and provided as <a href="https://reactjs.org/docs/context.html" target="_reactContext">Context</a> to the rest of the application, so that it can automatically post the username of the current session as part of POST requests to store questions/answers/comments (the username would be stored with the text as its author). The user's ID would also be stored to any upvotes/downvotes they gave to different questions/answers posts.
+                <br><br>
+                Part of the <i>questions</i> functionality that I built into the system was the ability to <i>search</i> all questions in the database. For this, I started up an instance of <a href="https://aws.amazon.com/elasticsearch-service/" target="_awsES">AWS Elasticsearch</a> to store the text, author and IDs of all questions in my database. Whenever the user searches up different keywords, relevant "hits" - ordered by AWS's hit score - would be returned for the user's viewing. Every time a user asked a question, the POST request to my server would also get routed for the data to be stored in my AWS ES.
+                <br><br>
+                As for the backend, I used Python's Django module this time around. Compared to Flask, Django's a more <i>comprehensive</i> framework - I'd liken the two as follows: Flask is to Django as a screwdriver set is to a fully-equipped toolbox. Django covers more areas of API servers, but in a way, the flexibility to use other tools offered by Flask was also nice.
+                <br><br>
+                Having used sqlite as the db last time, this time I went with a <a href="https://aws.amazon.com/rds/" target="_awsRDS">PostgreSQL db hosted on AWS RDS.</a> Within my Django app, I'd set up models (ORM schemas) for questions, answers, comments, user info and votes (which associated users - the voters - to different question/answer posts and kept vote tallies on each of the latter). After db creation/migrations, model serializers were set up for each to help sanitize/format data for responses to different HTTP requests, and views for each respective model was established to handle GET, POST, PATCH and DELETE requests using the <a href="https://www.django-rest-framework.org/" target="_djangoRest">djangorestframework</a> module. A <a href="https://pypi.org/project/django-cors-headers/" target="_djangoCORS">Django CORS middleware</a> was installed and used to handle CORS permissions. Routing of incoming requests to different views was handled by inputs to Django's urls.py modules.
+                <br><br>
+                As with prior, the server was then hosted on <a href="https://aws.amazon.com/elasticbeanstalk/" target="_awsEB">AWS Elastic Beanstalk.</a> The front-end of the app (above) is hosted on <a href="https://aws.amazon.com/amplify/" target="_awsAmp">AWS Amplify.</a>
+                <br><br>
+                <a href="https://github.com/bsun94/simpleQuora" target="_gitQuora">Click here to see all my code and content files for this project on Github.</a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

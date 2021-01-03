@@ -18,6 +18,7 @@ body {
     background: white;
     position: sticky;
     top: 0px;
+    box-shadow: 0px 1px 10px 1px black;
 }
 
 .navigation {
@@ -79,141 +80,45 @@ body {
 
 /* For formatting the descriptive contents of the portfolios page */
 
-.frame {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
-    overflow-x: auto;
+.frame-grid {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
 }
 
-.frame-anchor {
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    color: salmon;
-    font-size: 35px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+.frame-grid-block {
+    height: 350px;
+    padding-bottom: 10px;
 }
 
-.frame-anchor a {
-    padding-top: 100px;
-    margin-top: -100px;
-}
-
-.frame-exhibit {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    justify-items: center;
-    max-width: 100%;
-    margin-bottom: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
-    overflow: hidden;
-}
-
-.image {
-    position: relative;
-    border-radius: 5%;
+.frame-grid-block:hover {
+    box-shadow: black 2px 2px 5px 1px;
     cursor: pointer;
+}
+
+.illustration {
+    height: 300px;
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
     object-fit: cover;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.5s ease-in;
 }
 
-.image-rousseau{
-    max-height: 500px;
-    flex-wrap: wrap-reverse;
+.illustration:hover {
+    opacity: 0.6;
 }
 
-.image-twitter{
-    max-width: 33%;
-    margin-right: 10px;
-}
-
-.image-covid{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 75vh;
-}
-
-.image-persweb{
-    max-width: 33%;
-    margin-right: 10px;
-    margin-bottom: 22%;
-}
-
-.iframe {
-    width: 100%;
-    height: 75vh;
-    background: url(../images/portfolio-iframe-loading.gif) center center no-repeat;
-}
-
-/* image interactions and animations */
-.image.appear {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-.image:hover {
-    opacity: 0.8;
-    transition: 0.25s;
-}
-
-/* image lightboxes */
-
-#lightbox {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-}
-
-#lightbox.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: display 0.5s;
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    padding: 4px;
-    background-color: black;
-    border: 2px solid white;
-}
-
-/* text formatting */
-
-.text {
-    font-size: 15px;
-    text-align: left;
+.caption {
+    margin-top: 10px;
+    color: salmon;
     font-family: Arial, Helvetica, sans-serif;
-    color: gray;
-    line-height: 20px;
-}
-
-.text-rousseau {
-    width: 120%;
-    padding-right: 50px;
-}
-
-.text a {
-    text-decoration: none;
-    border-bottom: none;
-    color: gray;
     font-weight: bold;
+    font-size: 14px;
+    text-align: center;
 }
 
-.text a:hover {
-    font-weight: bolder;
-    color: black;
-    border-bottom: solid black 1px;
+a {
+    text-decoration: none;
 }

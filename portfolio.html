@@ -27,91 +27,80 @@
         <div class="profiles">
             <div class="header-photos">
                 <a href="https://github.com/bsun94" target="github">
-                    <img class="github" src="images/index-header-github.jpg">
+                    <img class="github" src="images/header-github.jpg">
                 </a>
             </div>
 
             <div class="header-photos">
                 <a href="https://www.linkedin.com/in/bsun-to/" target="linkedin">
-                    <img class="linkedin" src="images/index-header-linkedin.jpg">
+                    <img class="linkedin" src="images/header-linkedin.jpg">
                 </a>
             </div>
         </div>
 
     </div>
 
-    <div class="frame" >
-        <div class="frame-anchor">
-            <a id="rousseau-bot">RousseauBot on Twitter</a>
-        </div>
+    <div class="frame-grid">
 
-        <div class="frame-exhibit">
-            <div class="text text-rousseau">
-                Curious about how Twitter bots worked, I set out to create one myself. The first step is to set up an account for your bot, then apply for Twitter Developers access to that account's back-end. This process should be fairly straightforward and quick within the Twitter Developers portal - just remember to take down all your API/client tokens and keys!
-                <br><br>
-                Then it was a matter of grabbing Rousseau source material. I found a webpage on the <a href="https://oll.libertyfund.org/titles/rousseau-the-social-contract-and-discourses" target="_libertylib">Online Library of Liberty</a> site containing a work by Rousseau that I liked, <i>On the Social Contract</i>. Using BeautifulSoup and the requests Python libraries, I scraped the webpage for text (using regex to split paragraphs into sentences and to clean the final output e.g. ignore "sentences" that are really chapter titles). This is all then stored in a txt file for a separate script to read.
-                <br><br>
-                I wrote another program that read a randomly-selected quote for the txt file above and posted it to Twitter on RousseaBot's account (as shown on the right - go follow!), keeping track of the quotes tweeted over the past 10 days to avoid short-term repetition in a sure-fire manner.
-                <br><br>
-                <a href="https://github.com/bsun94/RousseauBot" target="_rousseaubot">Click here to see all my code and content files for this project on Github.</a>
+        <a href="supporting_htmls/portfolio-simplequora.html">
+            <div class="frame-grid-block">
+                <img class="illustration" src="images/portfolio/portfolio-simplequora.jpg">
+    
+                <div class="caption">
+                    A New Quora ("Kworah", with Django and React.js)
+                </div>
             </div>
+        </a>
 
-            <img class="image image-rousseau" src="images/portfolio-rousseaubot-twitter.JPG">
-        </div>
-    </div>
-
-    <div class="frame" >
-        <div class="frame-anchor">
-            <a id="covid-tracker">Seeing the spread of covid-19</a>
-        </div>
-
-        <div class="frame-exhibit">
-            <img class="image image-covid" src="images/portfolio-covidtracker-cases.JPG">
-
-            <img class="image image-covid" src="images/portfolio-covidtracker-deaths.JPG">
-        </div>
-
-        <div class="frame-exhibit">
-            <div class="text text-covid">
-                As we lived through more and more of the pandemic, I noticed that cases and deaths were mostly concentrated in a few countries (I'd kept track of online COVID counts). That sparked the idea to build a tracker that can display a choropleth map of COVID cases and deaths around the world.
-                <br><br>
-                Finding an online data source was the most important first step. Thankfully, the folks at the <a href="https://ourworldindata.org/coronavirus" target="_owid">Our World in Data</a> offers data pulled from the <i>European Centre for Disease Control</i> for free use.
-                <br><br>
-                The program I wrote would first take user input for whether they want to see cases or deaths data visualized, and for which date. Based on these inputs, it would then look up the relevant data from the OWID data source above and clean it up (e.g. for inconsistencies in country name spellings). It then builds the choropleth maps using the folium library, and massages pieces of the COVID data for presentation on the map. With selenium, it finally outputs an interactive map on the user's screen.
-                <br><br>
-                <a href="https://github.com/bsun94/COVIDTracker" target="_covid">Click here to see all my code and content files for this project on Github.</a>
+        <a href="supporting_htmls/portfolio-cnendict.html">
+            <div class="frame-grid-block">
+                <img class="illustration" src="images/portfolio/portfolio-cnendict.jpg">
+    
+                <div class="caption">
+                    Chinese-English Dictionary (Flask and React.js)
+                </div>
             </div>
-        </div>
-    </div>
+        </a>
 
-    <div class="frame" >
-        <div class="frame-anchor">
-            <a id="simple-twitter">twitter's much younger counsin</a>
-        </div>
-
-        <div class="frame-exhibit">
-                <img class="image image-twitter" src="images/portfolio-simpletwitter-login.JPG">
-
-                <img class="image image-twitter" src="images/portfolio-simpletwitter-main.JPG">
-
-                <img class="image image-twitter" src="images/portfolio-simpletwitter-replies.JPG">
-        </div>
-
-        <div class="frame-exhibit">
-            <div class="text text-twitter">
-                I'd always been curious if I could build a rudimentary version of a social media platform - just as a proof-of-concept for myself to see how it could all work. Aware that I do not have the same kind of budget that Facebook and Twitter have, and that I'll be programming this in my spare time outside of a full-time job, I decided to take a tongue-in-cheek approach to this project - calling it a "Low-Budget" Twitter.
-                <br><br>
-                The application is capable of handling user logins (checking if username already exists before registration; validating inputted username and password - the login screen is shown in the left image), inputting and display of tweets on a main feed (middle image) and build conversation chains/rooms for each main feed tweet (i.e. all tweets belonging to a particular conversation thread - example shown in the image to the right). The logo drawn for the application, as can be seen on the login window, is meant to reflect the tongue-in-cheek side of this project (and avoid copyright) :)
-                <br><br>
-                I used the tkinter module in Python to build out the UI for this application. I'd learnt about tkinter ever when I first learnt Python, and was always keen on using it to build something. Admittedly, tkinter doesn't necessarily make for the most modern-looking social media app - I was more so curious and keen to get deeper into the module.
-                <br><br>
-                As for the database side of things, I set up a free account with IBM to use their Lite database plan. The script makes a connection to the IBM database when storing tweets/replies that users post, as well as user login information. For security purposes, user passwords are hashed prior to database storage. The overall structure of the code is based on the MVC design pattern.
-                <br><br>
-                <a href="https://github.com/bsun94/simpletwitter" target="_twitter">Click here to see all my code and content files for this project on Github.</a>
+        <a href="supporting_htmls/portfolio-simpletwitter.html">
+            <div class="frame-grid-block">
+                <img class="illustration" src="images/portfolio/portfolio-simpletwitter.jpg">
+    
+                <div class="caption">
+                    My own version of Twitter (Python - enum, hashlib, pickle; IBM Cloud)
+                </div>
             </div>
-        </div>
-        
-    </div>
+        </a>
+
+        <a href="supporting_htmls/portfolio-covidtracker.html">
+            <div class="frame-grid-block">
+                <img class="illustration" src="images/portfolio/portfolio-covidtracker.jpg">
+    
+                <div class="caption">
+                    Choropleth tool of COVID Spread (Python - pandas, numpy, requests, folium, selenium)
+                </div>
+            </div>
+        </a>
+
+        <a href="supporting_htmls/portfolio-rousseaubot.html">
+            <div class="frame-grid-block">
+                <img class="illustration" src="images/portfolio/portfolio-rousseau.jpg">
+    
+                <div class="caption">
+                    Twitter bot mimicing Rousseau (Python - requests, BeautifulSoup, numpy, tweepy, pickle)
+                </div>
+            </div>
+        </a>
+
+        <a href="supporting_htmls/portfolio-personalwebsite.html">
+            <div class="frame-grid-block">
+                <img class="illustration" src="images/portfolio/portfolio-website.png">
+    
+                <div class="caption">
+                    Building this website (HTML, CSS, JavaScript)
+                </div>
+            </div>
+        </a>
 
 </body>
 </html>
