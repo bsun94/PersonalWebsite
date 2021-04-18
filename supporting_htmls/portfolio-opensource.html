@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Brian Sun's Webspace</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='../css/styles-portfolio-projects.css'>
+    <script defer type="text/javascript" src='../js/script-portfolio.js'></script>
+</head>
+<body>
+    <div class="headerbar">
+
+        <div class="navigation">
+            <div class="navigation-home">
+                <a href="../index.html">Main</a>
+            </div>
+
+            <div class="navigation-portfolio">
+                <a href="../portfolio.html">Portfolio</a>
+            </div>
+
+            <div class="navigation-about">
+                <a href="../about.html">About</a>
+            </div>
+        </div>
+
+        <div class="profiles">
+            <div class="header-photos">
+                <a href="https://github.com/bsun94" target="github">
+                    <img class="github" src="../images/header-github.jpg">
+                </a>
+            </div>
+
+            <div class="header-photos">
+                <a href="https://www.linkedin.com/in/bsun-to/" target="linkedin">
+                    <img class="linkedin" src="../images/header-linkedin.jpg">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="frame" >
+        <div class="frame-anchor">
+            <a id="rousseau-bot">Open Source Contributions</a>
+        </div>
+
+        <div class="frame-exhibit">
+            <div class="text text-rousseau">
+                <i>pandas:</i>
+                <br><br>
+                Ever since I'd first moved onto Python from VBA, I'd heard of and used pandas - for personal and work uses. Thus, when it came to open source, it was the first thing that crossed my mind.                
+                <br><br>
+                My first ever contribution was to the official documentation (I was still fairly green at this point in terms of open source contributions in general). I helped write out portions of the "Getting Started" guide that helped guide first-time users from a Microsoft Excel background on how to use pandas, and similarities in functionality between pandas and Excel. This project exposed me and taught me a lot about reStructuredText (which, as I'll later find out, both pandas and scikit-learn - and many important open source libraries - seem to use for their official documentation websites). 
+                <br><br>
+                I then dove into the code. I helped fixed a bug where the <i>clear</i> method of the <i>Styler</i> object wasn't clearing all the (would-be) expected styles of dataframes. This involved me diving into the large pandas codebase, isolating the portions of the <i>Styler</i> class that were relevant, proposing and discussing solutions to the problem with one of the core devs of the project. I really like this latter portion of the work - the back-and-forth with people much more experience than me - as I found it to help in my learning tremendously.
+                <br><br>
+                Testing is, needless to say, an important part of development, and the next ticket I picked up was to write additional tests to confirm the resolution of a bug. Previously, the <i>idxmax</i> and <i>idxmin</i> methods of a <i>DataFrame</i> object (finding the indices where the max/min values occur by column/row) did not work as expected in combination with another method. This was fixed, but additional tests were needed. Using the pytest framework (which seems standard across many of these open-source projects), I'd written parametrized tests that helped verify the resolution of the prior bug.
+                <br><br>
+                <a href="https://github.com/pandas-dev/pandas/" target="_pandas">Click here to refer to the pandas repo on Github.</a>
+
+                <br><br>
+                <i>scikit-learn:</i>
+                <br><br>
+                I'd been exposed to the scikit-learn library initially in completing my IBM Data Science Professional Certification, as its regression functions and methods were included in the coursework. I'd decided it'd be a good place to look to contribute to open source as well, and hung around its Github looking for good issues to tackle.
+                <br><br>
+                I've been involved in rounding off the implementation of the Poisson criterion in its random forest regressions. For my part, I added in input/output checks for Poisson regressions in the main <i>fit</i> method (after initiating a regression object in scikit-learn and providing input data, "fit" essentially fits the regression model's parameters to the data provided), and wrote tests using the pytest framework to make sure that the regression actually works (as well as the input/output checks). I also helped update relevant portions of the official documentation to make it known that Poisson regressions were now supported with random forests.
+                <br><br>
+                <a href="https://github.com/scikit-learn/scikit-learn" target="_scikitlearn">Click here to refer to the scikit-learn repo on Github.</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
